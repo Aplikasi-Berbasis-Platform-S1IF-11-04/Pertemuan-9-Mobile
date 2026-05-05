@@ -7,8 +7,8 @@
 
   <br />
 
-  <h3>MODUL - 1,2,3<br>
-    Pengenalan Flutter dan Dart
+  <h3>MODUL - 4 & 5<br>
+    Antar Muka Pengguna
   </h3>
 
   <br />
@@ -45,232 +45,328 @@
 
 ---
 
-# 1. Dasar Teori
+# 1. Tugas
+📝 Tugas Praktikum Modul 4-5 Flutter
 
-Flutter adalah framework open-source yang dikembangkan oleh Google untuk 
-membangun aplikasi lintas platform seperti mobile, web, dan desktop hanya dengan 
-satu codebase. Flutter menggunakan bahasa pemrograman Dart serta didukung oleh 
-Skia Graphics Engine untuk merender tampilan secara langsung ke layar tanpa 
-bergantung pada komponen native. Salah satu keunggulan utama Flutter adalah 
-fitur hot reload yang memungkinkan developer melihat perubahan kode secara 
-langsung tanpa harus melakukan build ulang aplikasi, sehingga proses 
-pengembangan menjadi lebih cepat dan efisien.
+Buat 1 project Flutter yang menampilkan beberapa widget UI berikut:
+🔹 Yang harus ada:
+Container → kotak berwarna
+GridView → minimal 6 item (grid)
+ListView → 3 item (A, B, C)
+ListView.builder → list dari data array
+ListView.separated → list + garis pembatas
+Stack → tampilan bertumpuk (kotak / text)
 
-Dalam pengembangan antarmuka, Flutter menggunakan konsep widget tree, yaitu 
-struktur hierarkis di mana seluruh elemen UI dibangun dari widget. Widget ini 
-terbagi menjadi dua jenis utama, yaitu stateless widget yang tidak memiliki 
-state (data tidak berubah) dan stateful widget yang memiliki state yang dapat 
-berubah selama aplikasi berjalan. Struktur dasar aplikasi Flutter biasanya 
-dimulai dari MaterialApp sebagai root aplikasi, kemudian Scaffold sebagai 
-kerangka utama layout yang menyediakan komponen seperti AppBar dan body, serta 
-widget lain seperti Text dan Center untuk menampilkan dan mengatur posisi konten.
-
-Untuk pengelolaan arsitektur, Flutter mendukung berbagai pendekatan, salah 
-satunya adalah BLoC (Business Logic Component). Pola ini bertujuan untuk 
-memisahkan logika bisnis dari tampilan dengan menggunakan konsep event dan 
-state, sehingga aplikasi menjadi lebih terstruktur, mudah dikembangkan, 
-scalable, dan lebih mudah untuk diuji. Sebagai langkah awal pembelajaran, 
-biasanya developer membuat aplikasi sederhana seperti “Hello World” untuk 
-memahami struktur dasar Flutter dan cara kerja widget dalam membangun 
-tampilan aplikasi.
+📦 Output yang dikumpulkan:
+Screenshot hasilnya
+Source code
+Penjelasan singkat tiap widget
 
 ---
 
-# 2. Screenshot Tampilan Environment & Hasil
-
-## Verifikasi SDK Android Studio
-*(Penjelasan: Screenshot SDK Manager untuk memastikan build tools aman)*
-<p>
-<img width="1002" height="744" alt="Screenshot 2026-05-04 003252" src="https://github.com/user-attachments/assets/f86fc37c-aba4-465c-8169-64c252592edf" />
-<img width="992" height="742" alt="Screenshot 2026-05-04 003318" src="https://github.com/user-attachments/assets/cb816512-6e96-4da7-962a-d8c7e9e6f189" />
-<img width="992" height="742" alt="Screenshot 2026-05-04 003259" src="https://github.com/user-attachments/assets/2c2126f8-a03f-4b67-816a-e32a52ed0970" />
-
-</p>
-
-## Struktur Proyek Baru
-*(Penjelasan: Screenshot struktur direktori proyek Flutter di IDE)*
-<p>
-<img width="791" height="719" alt="image" src="https://github.com/user-attachments/assets/e38e09a6-1e24-42f8-a5e4-58e0b34ac94c" />
-
-</p>
-
-## Verifikasi Instalasi Flutter (Flutter Doctor)
-*(Penjelasan: Screenshot terminal hasil `flutter doctor -v` untuk memastikan 
-seluruh dependensi terinstal dengan benar dan aman dari celah environment)*
-<p>
-<img width="907" height="769" alt="image" src="https://github.com/user-attachments/assets/e220e537-0fe6-45a5-a92e-d165a8f9b815" />
-
-</p>
-
-## Source Code Hello World
+# 2. Source Code main.dart
 ```dart
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PraktikumModulApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PraktikumModulApp extends StatelessWidget {
+  const PraktikumModulApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "Hello World",
+    return MaterialApp(
+      title: 'Tugas Praktikum 4-5',
+      theme: ThemeData(
+        primarySwatch: Colors.blueGrey,
+      ),
+      home: const TugasScreen(),
+      // Menonaktifkan banner debug untuk tampilan production
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: "Flutter Hello World Page"),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class TugasScreen extends StatelessWidget {
+  const TugasScreen({super.key});
 
-  final String title;
+  // DATA ARRAY YANG AMAN (Immutable Data Structure)
+  // Menghindari modifikasi data dari memori secara ilegal.
+  // Data simulasi menggunakan layanan cuci sepatu.
+  final List<String> arrayLayanan = const [
+    "Layanan Cuci: Deep Clean",
+    "Layanan Cuci: Fast Clean",
+    "Layanan Tambahan: Unyellowing",
+    "Layanan Tambahan: Leather Care"
+  ];
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  final List<String> arrayStatus = const [
+    "Menunggu Pembayaran",
+    "Sedang Dicuci",
+    "Siap Diambil"
+  ];
 
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Modul 4-5: Implementasi Widget UI'),
+        backgroundColor: Colors.blueGrey[900],
       ),
-      body: const Center(
-        child: Text(
-          'Hello World',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+      // SingleChildScrollView digunakan agar layar
+      // tidak mengalami overflow saat digulir
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            // ==========================================
+            // 1. CONTAINER
+            // ==========================================
+            const JudulSection(judul: "1. Container (Kotak Berwarna)"),
+            Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[700],
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Center(
+                child: Text(
+                  "Ini adalah Container",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 25),
+
+            // ==========================================
+            // 2. STACK
+            // ==========================================
+            const JudulSection(judul: "2. Stack (Tampilan Bertumpuk)"),
+            Center(
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 150,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      color: Colors.blueAccent,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 5
+                        )
+                      ],
+                    ),
+                  ),
+                  const Text(
+                    "Teks di Atas Kotak",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 25),
+
+            // ==========================================
+            // 3. GRIDVIEW (Minimal 6 Item)
+            // ==========================================
+            const JudulSection(judul: "3. GridView (6 Item Grid)"),
+            GridView.count(
+              shrinkWrap: true, // Wajib agar tidak error di dalam Column
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: List.generate(6, (index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Grid ${index + 1}",
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                );
+              }),
+            ),
+            const SizedBox(height: 25),
+
+            // ==========================================
+            // 4. LISTVIEW (3 Item A, B, C)
+            // ==========================================
+            const JudulSection(judul: "4. ListView Statis (A, B, C)"),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: ListView(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: const [
+                  ListTile(
+                    leading: CircleAvatar(child: Text("A")),
+                    title: Text("Item Data A"),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(child: Text("B")),
+                    title: Text("Item Data B"),
+                  ),
+                  ListTile(
+                    leading: CircleAvatar(child: Text("C")),
+                    title: Text("Item Data C"),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 25),
+
+            // ==========================================
+            // 5. LISTVIEW.BUILDER (Dari Data Array)
+            // ==========================================
+            const JudulSection(judul: "5. ListView.builder (Dari Array)"),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: arrayLayanan.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 2,
+                  child: ListTile(
+                    leading: const Icon(Icons.cleaning_services),
+                    title: Text(arrayLayanan[index]),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 25),
+
+            // ==========================================
+            // 6. LISTVIEW.SEPARATED (Garis Pembatas)
+            // ==========================================
+            const JudulSection(judul: "6. ListView.separated (Dengan Garis)"),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: arrayStatus.length,
+                separatorBuilder: (context, index) {
+                  return const Divider(
+                    color: Colors.redAccent,
+                    thickness: 1.5,
+                  );
+                },
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: const Icon(Icons.info_outline),
+                    title: Text(arrayStatus[index]),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(height: 40), // Spasi bawah agar rapi
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Widget Bantuan untuk Judul agar kode lebih DRY (Don't Repeat Yourself)
+class JudulSection extends StatelessWidget {
+  final String judul;
+  const JudulSection({super.key, required this.judul});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: Text(
+        judul,
+        style: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Colors.black87,
         ),
       ),
     );
   }
 }
 ```
-## Hasil Running Hello World
-<p>
-<img width="1225" height="972" alt="image" src="https://github.com/user-attachments/assets/906c6efb-563e-492c-95a2-d33fff00097b" />
+# 3. Penjelasan Code
+kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang secara modular dan aman dengan memanfaatkan immutable data structure (const List) untuk mencegah modifikasi data ilegal secara langsung di memori. Aplikasi ini dibungkus menggunakan pengaman SingleChildScrollView untuk melindungi sistem dari kerentanan rendering overflow (layar bocor), sekaligus mendemonstrasikan enam komponen tata letak fundamental secara berurutan, mulai dari kotak elemen statis hingga manajemen daftar data dinamis berskala produksi.
 
+# 4. Screen Shoot hasil running dan pejelasan Widget
+## 1. Container
+
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
 </p>
+*Deskripsi: Widget ini bertindak sebagai pembungkus (wrapper) fundamental yang aman untuk mengontrol dimensi dasar (tinggi dan lebar), warna latar belakang, dan memberikan modifikasi dekoratif (borderRadius), sehingga mampu membentuk kotak biru keabu-abuan tanpa memicu overhead memori tambahan.*
 
----
+## 2. GridView
 
-# 3. MODUL 03 - Pengenalan Dart
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+</p>
+*Deskripsi: Diimplementasikan menggunakan GridView.count untuk menyajikan elemen antarmuka secara aman dalam bentuk matriks dua dimensi. Penggunaan atribut tingkat tinggi seperti shrinkWrap: true dan pemutusan physics scrolling disematkan secara ketat demi mencegah konflik alokasi layout dan potensi aplikasi crash saat dibungkus oleh induk Column.*
 
+## 3. ListView
 
-## 3.1. Pengenalan Dart
-Untuk belajar Flutter, tidak perlu terlalu fasih mempelajari bahasa Dart secara 
-mendalam di awal. Terdapat fundamental yang perlu dipelajari seperti variable, 
-statement control, looping, array, fungsi, dan sebagainya. Karakteristik bahasa 
-Dart mirip dengan bahasa C atau Java, di mana penggunaan titik koma (`;`) 
-diakhir baris kodingan adalah wajib.
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+</p>
+*Deskripsi: Merupakan daftar list vertikal standar yang akan merender seluruh elemen internalnya secara bersamaan ke dalam memori. Pendekatan statis ini hanya diizinkan untuk menyajikan dataset bervolume sangat kecil yang sudah pasti batas ukurannya (seperti data A, B, C), sehingga proses eksekusinya berjalan cepat.*
 
-## 3.1.1. Variable
-Penggunaan variable di Dart dapat dilakukan dengan beberapa cara, yaitu 
-menggunakan `var`, *type annotation*, dan *multiple variable*.
+## 4. ListView.builder 
 
-**Contoh Kode:**
-```dart
-// var
-var namaVariable = nilai;
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+</p>
+*Deskripsi: Ini adalah standar industri best practice untuk merender daftar data berukuran masif atau dinamis. Widget ini bekerja menggunakan sistem keamanan memori lazy-loading, yang artinya elemen UI dari array hanya akan dirender dan memakan RAM sesaat ketika item tersebut benar-benar tersorot di layar perangkat.*
 
-// type annotation
-String nama = "Arnanda";
-int umur = 20;
+## 5. ListView.separated
 
-// multiple variable
-var a = 1, b = 2, c = 3;
-```
-Variable primitif yang tersedia di Dart:
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+</p>
+*Deskripsi: Memiliki arsitektur performa dan proteksi memori yang sama persis dengan ListView.builder, namun diperkuat dengan parameter bawaan separatorBuilder. Fitur ini berfungsi secara otomatis menyuntikkan komponen pembatas visual (dalam hal ini berupa garis pemisah tebal berwarna merah) di sela-sela iterasi data array status pesanan.*
 
-Integer (int)
+## 6. Stack
 
-Double (double)
-
-String (string)
-
-Boolean (bool)
-
-### Screenshot Hasil Variable:
-<img width="376" height="169" alt="image" src="https://github.com/user-attachments/assets/f803bc0b-43b4-4e1e-aa6d-9347d1cd47dc" />
-
-## 3.1.2. Statement Control
-Statement control digunakan untuk menentukan alur eksekusi program.
-Dart mendukung if, if-else, if-else-if, dan switch-case.
-
-Contoh Struktur Switch Case:
-
-```Dart
-switch(expression) {
-  case value1:
-    // statements
-    break;
-  case value2:
-    // statements
-    break;
-  default:
-    // statements
-    break;
-}
-```
-### Screenshot Hasil Statement Control:
-<img width="310" height="126" alt="image" src="https://github.com/user-attachments/assets/b1399050-e080-4945-85d0-28fe46b9b4f3" />
-
-## 3.1.3. Looping
-Terdapat dua cara utama untuk melakukan perulangan di Dart:
-
-For Loops: Digunakan saat jumlah perulangan sudah diketahui pasti.
-
-While Loops: Digunakan saat kondisi berhenti tidak diketahui secara pasti
-(tergantung pada ekspresi logika).
-
-Screenshot Hasil Looping:
-<img width="405" height="220" alt="image" src="https://github.com/user-attachments/assets/3e315d75-ddd6-4683-8e85-eb87e1d11e1d" />
-
-## 3.1.4. List
-Dalam Dart, kumpulan data dalam satu variabel disebut List (di bahasa lain
-sering disebut Array).
-
-Fixed Length List: Memiliki panjang indeks yang tetap.
-
-```Dart
-var newList = List.filled(3, 0); // Contoh modern
-newList[0] = 12;
-```
-Growable List: Digunakan jika jumlah objek tidak menentu atau terus
-bertambah.
-
-```Dart
-var growableList = [];
-growableList.add(12);
-```
-### Screenshot Hasil List:
-<img width="538" height="143" alt="image" src="https://github.com/user-attachments/assets/86138fc9-b669-4224-9227-190ff49f9511" />
-
-## 3.1.5. Fungsi (Function)
-Fungsi sangat penting dalam pemrograman berbasis objek untuk menerapkan prinsip
-Separation of Concern. Program yang baik harus mengurangi boilerplate code dan memiliki tanggung jawab yang spesifik.
-
-Contoh Fungsi Rekursif (Faktorial):
-
-```Dart
-factorial(number) {
-  if (number <= 0) {
-    return 1;
-  } else {
-    return (number * factorial(number - 1));
-  }
-}
-```
-### Screenshot Hasil Fungsi:
-<img width="538" height="143" alt="image" src="https://github.com/user-attachments/assets/f690fcf8-23dc-40f3-afc8-a5f7a2bb1d8d" />
-
-### Referensi
-
-- Flutter Docs: [https://docs.flutter.dev](https://docs.flutter.dev)
-- Modul 1 dan 2 Praktikum Aplikasi Berbasis Platform
+<p align="center">
+  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+</p>
+*Deskripsi: Berfungsi untuk menumpuk elemen antarmuka pada ruang sumbu-Z (Z-axis). Dalam kode ini, komponen Stack dimanfaatkan secara presisi untuk meletakkan teks peringatan di atas lapisan dua buah Container yang saling tumpang tindih dengan efek shadow, tanpa merusak struktur hierarki kolom utama.*
