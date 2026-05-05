@@ -48,14 +48,14 @@
 # 1. Tugas
 📝 Tugas Praktikum Modul 4-5 Flutter
 
-Buat 1 project Flutter yang menampilkan beberapa widget UI berikut:
-🔹 Yang harus ada:
-Container → kotak berwarna
-GridView → minimal 6 item (grid)
-ListView → 3 item (A, B, C)
-ListView.builder → list dari data array
-ListView.separated → list + garis pembatas
-Stack → tampilan bertumpuk (kotak / text)
+Buat 1 project Flutter yang menampilkan beberapa widget UI berikut:  
+🔹 Yang harus ada:  
+Container → kotak berwarna  
+GridView → minimal 6 item (grid)  
+ListView → 3 item (A, B, C)  
+ListView.builder → list dari data array  
+ListView.separated → list + garis pembatas  
+Stack → tampilan bertumpuk (kotak / text)  
 
 📦 Output yang dikumpulkan:
 Screenshot hasilnya
@@ -332,41 +332,41 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 ## 1. Container
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/container-stack-grid.png" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
 *Deskripsi: Widget ini bertindak sebagai pembungkus (wrapper) fundamental yang aman untuk mengontrol dimensi dasar (tinggi dan lebar), warna latar belakang, dan memberikan modifikasi dekoratif (borderRadius), sehingga mampu membentuk kotak biru keabu-abuan tanpa memicu overhead memori tambahan.*
 
 ## 2. GridView
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/container-stack-grid.png" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
 *Deskripsi: Diimplementasikan menggunakan GridView.count untuk menyajikan elemen antarmuka secara aman dalam bentuk matriks dua dimensi. Penggunaan atribut tingkat tinggi seperti shrinkWrap: true dan pemutusan physics scrolling disematkan secara ketat demi mencegah konflik alokasi layout dan potensi aplikasi crash saat dibungkus oleh induk Column.*
 
 ## 3. ListView
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/liststatis-builder.png" width="800" alt="listview">
 </p>
 *Deskripsi: Merupakan daftar list vertikal standar yang akan merender seluruh elemen internalnya secara bersamaan ke dalam memori. Pendekatan statis ini hanya diizinkan untuk menyajikan dataset bervolume sangat kecil yang sudah pasti batas ukurannya (seperti data A, B, C), sehingga proses eksekusinya berjalan cepat.*
 
 ## 4. ListView.builder 
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/list-separated.png" width="800" alt="listview">
 </p>
 *Deskripsi: Ini adalah standar industri best practice untuk merender daftar data berukuran masif atau dinamis. Widget ini bekerja menggunakan sistem keamanan memori lazy-loading, yang artinya elemen UI dari array hanya akan dirender dan memakan RAM sesaat ketika item tersebut benar-benar tersorot di layar perangkat.*
 
 ## 5. ListView.separated
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/list-separated.png" width="800" alt="listview">
 </p>
 *Deskripsi: Memiliki arsitektur performa dan proteksi memori yang sama persis dengan ListView.builder, namun diperkuat dengan parameter bawaan separatorBuilder. Fitur ini berfungsi secara otomatis menyuntikkan komponen pembatas visual (dalam hal ini berupa garis pemisah tebal berwarna merah) di sela-sela iterasi data array status pesanan.*
 
 ## 6. Stack
 
 <p align="center">
-  <img src="tampilanawal.png" width="800" alt="Tampilan Awal">
+  <img src="images/container-stack-grid.png" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
 *Deskripsi: Berfungsi untuk menumpuk elemen antarmuka pada ruang sumbu-Z (Z-axis). Dalam kode ini, komponen Stack dimanfaatkan secara presisi untuk meletakkan teks peringatan di atas lapisan dua buah Container yang saling tumpang tindih dengan efek shadow, tanpa merusak struktur hierarki kolom utama.*
