@@ -413,7 +413,7 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 <p align="center">
   <img src="images/container-stack-grid.png" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
-*Deskripsi: Widget ini bertindak sebagai pembungkus (wrapper) fundamental yang aman untuk mengontrol dimensi dasar (tinggi dan lebar), warna latar belakang, dan memberikan modifikasi dekoratif (borderRadius), sehingga mampu membentuk kotak biru keabu-abuan tanpa memicu overhead memori tambahan.*
+*Deskripsi: Widget ini bertindak sebagai pembungkus (wrapper) fundamental yang aman untuk mengontrol dimensi dasar (tinggi dan lebar), warna latar belakang, dan memberikan modifikasi dekoratif (borderRadius), sehingga mampu membentuk kotak berwarna tanpa memicu overhead memori tambahan.*
 
 ## 2. GridView
 
@@ -441,7 +441,7 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 <p align="center">
   <img src="images/list-separated.png" width="800" alt="listview">
 </p>
-*Deskripsi: Memiliki arsitektur performa dan proteksi memori yang sama persis dengan ListView.builder, namun diperkuat dengan parameter bawaan separatorBuilder. Fitur ini berfungsi secara otomatis menyuntikkan komponen pembatas visual (dalam hal ini berupa garis pemisah tebal berwarna merah) di sela-sela iterasi data array status pesanan.*
+*Deskripsi: Memiliki arsitektur performa dan proteksi memori yang sama persis dengan ListView.builder, namun diperkuat dengan parameter bawaan separatorBuilder. Fitur ini berfungsi secara otomatis menyuntikkan komponen pembatas visual (dalam hal ini berupa garis pemisah tebal berwarna ungu) di sela-sela iterasi data array status pesanan.*
 
 ## 6. Stack
 
