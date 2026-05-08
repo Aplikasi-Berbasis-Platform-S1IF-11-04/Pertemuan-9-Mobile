@@ -673,5 +673,28 @@ Penjelasan code:
 
 ## OUTPUT
 
+## 1. Output Container
+
+![Output Container](Screenshot%20Output_2311102069/Output%20Container.png)
+
+Pada output ini ditampilkan bagian **Container** yang berisi identitas mahasiswa, yaitu nama dan NIM. Container diberi warna gradasi biru, icon laundry, serta sudut melengkung agar tampilan lebih menarik dan rapi.
+
+## 2. Output GridView
+
+![Output GridView](Screenshot%20Output_2311102069/Output%20GridView.png)
+
+Pada output ini ditampilkan **GridView Layanan Laundry**. GridView digunakan untuk menampilkan menu layanan dalam bentuk kotak-kotak, seperti Cuci, Setrika, Express, Delivery, Parfum, dan Riwayat.
+
+## 3. Output ListView dan ListView.builder
+
+![Output ListView dan ListViewBuilder](Screenshot%20Output_2311102069/Output%20ListView%20dan%20ListViewBuilder.png)
+
+Pada output ini ditampilkan bagian **ListView Proses Laundry** dan **ListView.builder Paket Laundry**. ListView digunakan untuk menampilkan tiga proses laundry, yaitu Pakaian Masuk, Sedang Dicuci, dan Siap Diambil. Sedangkan ListView.builder digunakan untuk membuat daftar paket laundry secara otomatis berdasarkan data array.
+
+## 4. Output ListView.separated dan Stack
+
+![Output ListView Separated dan Stack](Screenshot%20Output_2311102069/Output%20ListView%20Separated%20dan%20Stack.png)
+
+Pada output ini ditampilkan **ListView.separated** dan **Stack Promo Laundry**. ListView.separated digunakan untuk menampilkan daftar layanan dengan garis pembatas antar item. Stack digunakan untuk membuat tampilan promo dengan beberapa widget yang saling bertumpuk, seperti icon laundry, gelembung, dan tulisan Clean & Fresh.
 
 
