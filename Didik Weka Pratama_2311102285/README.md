@@ -346,7 +346,7 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 ## 3. ListView
 
 <p align="center">
-  <img src="assets/gambar-1.jpeg" width="800" alt="listview">
+  <img src="assets/gambar-2.jpeg" width="800" alt="listview">
 </p>
 *Deskripsi: Merupakan daftar list vertikal standar yang akan merender seluruh elemen internalnya secara bersamaan ke dalam memori. Pendekatan statis ini hanya diizinkan untuk menyajikan dataset bervolume sangat kecil yang sudah pasti batas ukurannya (seperti data A, B, C), sehingga proses eksekusinya berjalan cepat.*
 
@@ -367,6 +367,6 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 ## 6. Stack
 
 <p align="center">
-  <img src="assets/gambar-2.jpeg" width="800" alt="Tampilan Container, Stack, dan Grid">
+  <img src="assets/gambar-1.jpeg" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
 *Deskripsi: Berfungsi untuk menumpuk elemen antarmuka pada ruang sumbu-Z (Z-axis). Dalam kode ini, komponen Stack dimanfaatkan secara presisi untuk meletakkan teks peringatan di atas lapisan dua buah Container yang saling tumpang tindih dengan efek shadow, tanpa merusak struktur hierarki kolom utama.*
