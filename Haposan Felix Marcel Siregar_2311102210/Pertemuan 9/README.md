@@ -15,7 +15,8 @@
 
   <br />
 
-  <img width="250" alt="Logo Tel-U" src="SS/image1.png" />
+ <img width="182" height="182" alt="image1" src="https://github.com/user-attachments/assets/8937914f-d19f-4e65-b983-c927c8559522" />
+
 
   <br />
   <br />
@@ -65,8 +66,15 @@ Berikut adalah hasil eksekusi program (UI) dari Modul 4-5 yang memuat seluruh wi
 <br>
 
 <div align="center">
-  <!-- Silakan ganti path di bawah ini dengan gambar screenshot sesungguhnya -->
-  <img src="SS/screenshot_modul_4_5.png" width="400" alt="Screenshot Hasil Modul 4-5">
+<img width="610" height="1356" alt="WhatsApp Image 2026-05-10 at 16 22 33" src="https://github.com/user-attachments/assets/ef9ecbae-4621-42d5-9c9c-0c8ca21cc6ba" />
+
+<img width="610" height="1356" alt="WhatsApp Image 2026-05-10 at 16 22 33 (1)" src="https://github.com/user-attachments/assets/a0bacfd5-b341-4096-98a5-e334136c4e96" />
+
+
+<img width="610" height="1356" alt="WhatsApp Image 2026-05-10 at 16 22 33 (2)" src="https://github.com/user-attachments/assets/6bc1300a-28a0-413a-a922-dc7b4ee298a1" />
+
+
+
 </div>
 
 <br>
