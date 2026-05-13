@@ -23,7 +23,7 @@
 
   <p>
     <strong>Aji Tri Prasetyo</strong><br>
-    <strong>2311102074</strong><br>
+    <strong>2311102064</strong><br>
     <strong>S1 IF-11-04</strong>
   </p>
 
