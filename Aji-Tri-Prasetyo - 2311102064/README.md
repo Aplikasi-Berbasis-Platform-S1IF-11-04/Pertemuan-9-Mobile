@@ -22,8 +22,8 @@
   <h3>Disusun Oleh :</h3>
 
   <p>
-    <strong>Arnanda Setya Nosa Putra</strong><br>
-    <strong>2311102180</strong><br>
+    <strong>Aji Tri Prasetyo</strong><br>
+    <strong>2311102074</strong><br>
     <strong>S1 IF-11-04</strong>
   </p>
 
@@ -46,6 +46,7 @@
 ---
 
 # 1. Tugas
+
 📝 Tugas Praktikum Modul 4-5 Flutter
 
 Buat 1 project Flutter yang menampilkan beberapa widget UI berikut:  
@@ -55,7 +56,7 @@ GridView → minimal 6 item (grid)
 ListView → 3 item (A, B, C)  
 ListView.builder → list dari data array  
 ListView.separated → list + garis pembatas  
-Stack → tampilan bertumpuk (kotak / text)  
+Stack → tampilan bertumpuk (kotak / text)
 
 📦 Output yang dikumpulkan:
 Screenshot hasilnya
@@ -65,6 +66,7 @@ Penjelasan singkat tiap widget
 ---
 
 # 2. Source Code main.dart
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -325,10 +327,13 @@ class JudulSection extends StatelessWidget {
   }
 }
 ```
+
 # 3. Penjelasan Code
+
 kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang secara modular dan aman dengan memanfaatkan immutable data structure (const List) untuk mencegah modifikasi data ilegal secara langsung di memori. Aplikasi ini dibungkus menggunakan pengaman SingleChildScrollView untuk melindungi sistem dari kerentanan rendering overflow (layar bocor), sekaligus mendemonstrasikan enam komponen tata letak fundamental secara berurutan, mulai dari kotak elemen statis hingga manajemen daftar data dinamis berskala produksi.
 
 # 4. Screen Shoot hasil running dan pejelasan Widget
+
 ## 1. Container
 
 <p align="center">
@@ -350,7 +355,7 @@ kode ini merupakan implementasi antarmuka pengguna (UI) Flutter yang dirancang s
 </p>
 *Deskripsi: Merupakan daftar list vertikal standar yang akan merender seluruh elemen internalnya secara bersamaan ke dalam memori. Pendekatan statis ini hanya diizinkan untuk menyajikan dataset bervolume sangat kecil yang sudah pasti batas ukurannya (seperti data A, B, C), sehingga proses eksekusinya berjalan cepat.*
 
-## 4. ListView.builder 
+## 4. ListView.builder
 
 <p align="center">
   <img src="images/list-separated.png" width="800" alt="listview">
