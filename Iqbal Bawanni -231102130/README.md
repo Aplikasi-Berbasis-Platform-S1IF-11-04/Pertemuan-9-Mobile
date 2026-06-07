@@ -266,7 +266,7 @@ Fungsi utama Container adalah sebagai pembungkus widget lain yang dapat diberika
 ## 2. GridView
 
 <p align="center">
-  <img src="assets/gamba1.png" width="800" alt="Tampilan Container, Stack, dan Grid">
+  <img src="assets/gambar1.png" width="800" alt="Tampilan Container, Stack, dan Grid">
 </p>
 Deskripsi: GridView digunakan untuk menampilkan data dalam bentuk grid atau susunan baris dan kolom. Pada program ini digunakan GridView.count dengan nilai crossAxisCount: 3, sehingga menghasilkan tiga kolom dan enam item.
 
